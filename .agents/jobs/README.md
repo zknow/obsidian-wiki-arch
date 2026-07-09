@@ -23,3 +23,4 @@
 - [[.agents/jobs/lint.md]] — Wiki 健康檢查（機械 + 語意 + 碰撞補強）
 - [[.agents/jobs/garden.md]] — 數位花園照顧（成熟度分級與養護建議）
 - [[.agents/jobs/inbox.md]] — 素材匯入自動化
+- [[.agents/jobs/init.md]] — 知識庫初始化／自我修復

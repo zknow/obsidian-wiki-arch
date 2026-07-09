@@ -23,6 +23,10 @@ run inbox --h              ← 顯示此說明
 
 ## Steps
 
+### 0. 前置檢查
+
+確認 `wiki/index.md` 與 `wiki/changelog.md` 是否存在。若任一缺失，自動呼叫 `run init --fix` 先修復。
+
 ### 1. 掃描 inbox
 
 讀取 `inbox/` 中所有檔案（排除 `.gitignore`）。
