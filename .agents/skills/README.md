@@ -9,6 +9,15 @@
 | `beautiful-article` | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | 將素材渲染為單檔 HTML 網頁文章 |
 | `obsidian-markdown` | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | Obsidian Flavored Markdown 語法規範 |
 
+## 一鍵安裝
+
+直接複製以下指令執行：
+
+```bash
+npx skills add ConardLi/garden-skills --yes --skill beautiful-article
+npx skills add kepano/obsidian-skills --yes --skill obsidian-markdown
+```
+
 ## 安裝方式
 
 不同 agent 有不同的 skill 安裝機制：

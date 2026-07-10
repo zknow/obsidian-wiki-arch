@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "beautiful-article": {
+      "source": "ConardLi/garden-skills",
+      "sourceType": "github",
+      "skillPath": "skills/beautiful-article/SKILL.md",
+      "computedHash": "30464dd1e18dcd674d6a93e7e3e13391036b48a392c37ba49069f57da55d103e"
+    },
     "obsidian-markdown": {
       "source": "kepano/obsidian-skills",
       "sourceType": "github",
