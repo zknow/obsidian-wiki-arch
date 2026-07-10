@@ -13,10 +13,11 @@
   - **wiki/concepts/** — 概念、理論、技術名詞筆記。
   - **wiki/places/** — 地點、國家、城市、景點筆記。
   - **wiki/works/** — 書籍、文章、電影、產品、研究論文等作品筆記。
-- **outbox/** — Jobs 自動化產出（報告、idea、碰撞分析等）。
+- **outbox/** — Jobs 自動化產出（報告、idea、碰撞分析、蒸餾等）。
   - **outbox/reports/** — 彙整報告產出。
   - **outbox/ideas/** — Idea / Side-project 構想產出。
   - **outbox/collisions/** — 隨機碰撞分析產出。
+  - **outbox/distill/** — 知識蒸餾深度分析產出。
 - **attachments/** — 圖片、PDF 等嵌入檔案的統一存放位置。
 - **templates/** — 可重複使用的筆記範本。
   - `person-template.md` — 人物頁面範本。
@@ -46,6 +47,31 @@
 - **所有操作都在 vault 目錄內進行** — 不要讀取或寫入 vault 目錄以外的任何檔案。
 - **寫入後無需手動觸發同步** — Obsidian 會自動偵測檔案變化並更新圖譜檢視與反向連結面板。
 
+## 檔案操作權限
+
+以下表格定義你對各目錄與檔案的 CRUD 權限，所有操作須嚴格遵守。
+
+| 路徑 | 讀取 | 寫入 | 刪除 | 說明 |
+|------|------|------|------|------|
+| `inbox/` | ✅ | ❌ | ❌ | 僅讀取素材 |
+| `archive/` | ❌ | ✅ | ❌ | 僅移入歸檔 |
+| `garden/` | ✅ | ✅ | ✅ | 灌溉、採收全流程 |
+| `wiki/**/*.md` | ✅ | ✅ | ❌ | 建立與更新，不刪除 |
+| `wiki/index.md` | ✅ | ✅ (append) | ❌ | 僅在頁面新增/移動時更新條目 |
+| `wiki/changelog.md` | ✅ | ✅ (append) | ❌ | 僅在底部新增記錄 |
+| `templates/` | ✅ | ❌ | ❌ | 唯讀 |
+| `outbox/` | ✅ | ✅ | ✅ | Jobs 產出完全管理 |
+
+
+| `attachments/` | ✅ | ✅ | ❌ | 可新增，不刪除 |
+| `.obsidian/` | ❌ | ❌ | ❌ | 完全禁止 |
+| `.agents/` | ✅ | ✅ | ✅ | 技能與 Job 全權管理 |
+| `AGENTS.md` | ✅ | ❌ | ❌ | 用戶明確要求才改 |
+| `README.md` | ✅ | ❌ | ❌ | 用戶明確要求才改 |
+| `.gitignore` | ✅ | ❌ | ❌ | 用戶明確要求才改 |
+
+> **匯入流程例外**：`run inbox` 執行時，允許將檔案從 `inbox/` 移動到 `archive/`（讀取 inbox → 寫入 archive → 清除 inbox 中的原始檔案）。此為唯一允許跨目錄刪除的流程。
+
 ## 已安裝的 Skill 使用指引
 
 本專案已安裝以下 Obsidian 專用 skill，你應在對應情境中使用它：
@@ -58,6 +84,10 @@
   - `references/PROPERTIES.md` — 所有屬性類型
   - `references/CALLOUTS.md` — 所有 callout 類型
   - `references/EMBEDS.md` — 所有嵌入類型
+
+### Skill 不足時的處理
+
+當任務需要但你身上未載入對應的 skill 時，先查閱 `.agents/skills/README.md` 確認是否有適用的 skill。若找到，列出安裝方式給用戶，詢問是否安裝後重試。若用戶拒絕或該 skill 不支援當前 agent，則繞過 skill 以常規方式執行任務。
 
 ## Tag 使用規範
 
@@ -127,3 +157,5 @@ Frontmatter 中的 `tags` 欄位用於多維度篩選與檢索。建議遵循以
 - `run garden --water` — 只灌溉 seedling 頁面
 - `run garden --status` — 列出花園狀態
 - `run garden --harvest` — 採收 evergreen 到 wiki/
+- `run distill` — 從 wiki 蒸餾深度分析 HTML 文章（自動推薦主題）
+- `run distill [主題]` — 指定主題蒸餾

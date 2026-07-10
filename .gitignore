@@ -1,3 +1,5 @@
 /.vscode
 /.grimoire
 /.obsidian/*
+/.agents/skills/*
+!/.agents/skills/README.md
