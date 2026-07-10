@@ -8,6 +8,7 @@
 root/
 ├── inbox/          ← 原始素材暫存區（你放檔案的地方）
 ├── archive/        ← 處理完的素材歸檔
+├── garden/         ← 未成熟的知識幼苗（由 garden job 灌溉、採收）
 ├── wiki/           ← 知識庫本體（AI 維護）
 │   ├── index.md    ← 目錄大綱，列出所有頁面
 │   ├── changelog.md ← 更新日誌
@@ -38,6 +39,7 @@ root/
 | Concept | 理論、技術名詞、思想、方法論 | `concept-template.md` |
 | Place | 國家、城市、景點、建築 | `place-template.md` |
 | Work | 書籍、電影、產品、論文、藝術品 | `work-template.md` |
+| Garden | 未成熟的知識幼苗（灌溉中） | `garden-template.md` |
 
 ## 已安裝的 Agent Skill
 
@@ -78,7 +80,10 @@ run report 過去一個月   ← 自訂時間範圍
 run idea                ← Side-project 構想
 run inbox               ← 匯入 inbox 素材到 wiki
 run lint                ← 健康檢查（機械 + 語意 + 碰撞補強）
-run garden              ← 數位花園照顧（成熟度分級）
+run garden              ← 數位花園照顧（灌溉 seedling + sprout）
+run garden --water      ← 只灌溉 seedling
+run garden --status     ← 列出花園狀態
+run garden --harvest    ← 採收 evergreen 到 wiki
 run init                ← 知識庫初始化／自我修復
 ```
 
@@ -102,8 +107,10 @@ run idea 教育科技
 # 健康檢查
 run lint
 
-# 花園照顧
+# 花園照顧（灌溉、狀態、採收）
 run garden
+run garden --status
+run garden --harvest
 
 # 知識庫初始化
 run init --fix

@@ -1,6 +1,3 @@
 /.vscode
 /.grimoire
-
-# Obsidian workspace state (window layout, session info)
-.obsidian/workspace.json
-.obsidian/plugins/
+/.obsidian/*
