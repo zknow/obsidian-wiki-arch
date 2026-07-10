@@ -16,7 +16,6 @@
 - **outbox/** — Jobs 自動化產出（報告、idea、碰撞分析、蒸餾等）。
   - **outbox/reports/** — 彙整報告產出。
   - **outbox/ideas/** — Idea / Side-project 構想產出。
-  - **outbox/collisions/** — 隨機碰撞分析產出。
   - **outbox/distill/** — 知識蒸餾深度分析產出。
 - **attachments/** — 圖片、PDF 等嵌入檔案的統一存放位置。
 - **templates/** — 可重複使用的筆記範本。
@@ -152,7 +151,9 @@ Frontmatter 中的 `tags` 欄位用於多維度篩選與檢索。建議遵循以
 
 - `run report [時間範圍]` — 產生知識庫彙整報告（預設過去一週），產出至 `outbox/reports/`
 - `run idea [主題提示]` — 從既有知識中提煉 side-project 構想，產出至 `outbox/ideas/`
-- `run collide` — 隨機挑選無直接關聯的頁面，尋找隱性連結並補強，產出至 `outbox/collisions/`
+- `run inbox` — 匯入 inbox 素材到 wiki/
+- `run lint` — 健康檢查（失效連結、孤立頁面、矛盾內容等）
+- `run init` — 知識庫初始化／自我修復
 - `run garden` — 灌溉 garden/ 中的知識幼苗（灌溉所有 seedling + sprout）
 - `run garden --water` — 只灌溉 seedling 頁面
 - `run garden --status` — 列出花園狀態

@@ -37,10 +37,10 @@ wiki/events/
 wiki/concepts/
 wiki/places/
 wiki/works/
+garden/
 outbox/
 outbox/reports/
 outbox/ideas/
-outbox/collisions/
 .agents/
 .agents/jobs/
 ```
